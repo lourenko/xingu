@@ -1,0 +1,27 @@
+{% extends 'mysite/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static "css/signin.css" %}">
+
+  {{ state }}
+
+  {% if next %}
+    <form class="form-signin" role="form" id="login_form" method="post" action="/mysite/login/?next={{next}}">
+  {%else%}
+    <form class="form-signin" role="form" id="login_form" method="post" action="/mysite/login/">
+  {% endif %}
+
+  <h2 class="form-signin-heading">Iniciar sessão</h2>
+
+  {% csrf_token %}
+  Usuário: <input class="form-control" placeholder="Usuário" id="id_username" type="text" name="username" value="" size="50" />
+  <br />
+  Senha: <input class="form-control" placeholder="Senha" type="password" name="password" value="" size="50" />
+  <br />
+  <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit" />Entrar</button>
+</form>
+
+{% endblock %}

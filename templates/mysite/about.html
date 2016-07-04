@@ -1,0 +1,27 @@
+{% extends 'mysite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Sobre {% endblock %}
+{% block body_block %}
+
+{{ state }}
+
+  {% if next %}
+    <form action="/mysite/about/?next={{next}}" method="post" >
+  {%else%}
+    <form action="/mysite/about/" method="post" >
+  {% endif %}
+
+    <!-- Begin page content -->
+    <div class="container">
+        <div class="page-header">
+            <!--h1>Sobre o IX Sipem</h1-->
+        </div>
+        <p class="lead">
+        O Simpósio Paranaense de Engenharia Mecânica é um evento ...
+        </p>
+    </div>
+
+{% endblock %}
+

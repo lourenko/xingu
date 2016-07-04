@@ -1,0 +1,47 @@
+{% extends 'mysite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} {{block_name}} {% endblock %}
+
+{% block body_block %}
+
+<div class="container" style="margin-top:5px">
+  <div class="page-header page-heading">
+    <!--h1 class="pull-left">{-{ post_name }}</h1>
+    <ol class="breadcrumb pull-right where-am-i">
+      <li><a href="#">{-{post_name}}</a></li>
+      <li class="active">List of topics</li>
+    </ol-->
+    <div class="clearfix"></div>
+  </div>
+  <p class="lead">This is my personal homepage. Here, I share some projects,
+  thoughts and ideas. This site also contains lectures and other
+  materials for the courses I teach.</p>
+
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Posts</h3>
+        </th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="mysite/blog/{{ post.id }}">{{ post.title }}</a><br>{{ post.descr }}</h4>
+        </td>
+        <td class="hidden-xs hidden-sm"><i class="fa fa-clock-o">{{ post.date|date:"m-d-Y" }}</i></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+ 
+</div>
+
+{% endblock %}

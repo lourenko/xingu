@@ -1,0 +1,42 @@
+.navbar-brand {
+    color: #333333;
+    font-family: 'Exo', sans-serif;
+    border-color:#75d547;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #333333;
+    /*font-family: 'Marcellus+SC', sans-serif;*/
+    font-size: 15;
+}
+
+.navbar {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 0px 0px 0px 0px;
+}
+
+.navbar-nav a:hover {
+    opacity: 0.85;
+    border-color: rgba(215, 255, 214, 0.85);
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #333;
+    background-color: transparent;
+    font-family: 'Marcellus+SC', sans-serif;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: underline;
+    background-color: #EEE;
+}
+
+.page-header{
+    font-family: 'Cantarell', sans-serif;
+}
+
+.well {
+    margin-bottom: 65px;
+}
+

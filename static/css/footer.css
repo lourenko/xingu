@@ -1,0 +1,37 @@
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10px;
+    background:     none repeat scroll 0 0 #fff;
+    border-top:     2px solid #e7e7e7;
+    /*border-bottom:     2px solid #e7e7e7;*/
+}
+
+.footer .container {
+  color:          red;
+  font-size:      1em ;
+  /*text-align:     center;*/
+  line-height:    2.0em ;
+}
+
+body > .container {
+    padding: 60px 15px 0px;
+    padding-top: 60px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+}
+
+.container .text-muted {
+    margin: 20px 0px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+html {
+    position: relative;
+    min-height: 90%;
+}

@@ -1,0 +1,29 @@
+{% extends 'mysite/index.html' %}
+
+{% load staticfiles %}
+
+{% block pos_block %}
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Posts</h3>
+        </th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in object_list %}
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="/blog/{{ post.id }}">{{ post.title }}</a><br>{{ post.descr }}</h4>
+        </td>
+        <td class="hidden-xs hidden-sm"><i class="fa fa-clock-o">{{ post.date|date:"m-d-Y" }}</i></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+

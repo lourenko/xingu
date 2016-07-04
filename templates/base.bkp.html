@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+        <script type="text/javascript" async="" src="https://js.hs-analytics.net/analytics/1443267300000/838829.js" id="hs-analytics"></script>
+        <script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+        <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+
+        <title>Rango - {% block title %}How to Tango with Django!{% endblock %}</title>
+
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="../../static/css/common.css">
+        <link rel="stylesheet" href="../../static/css/home.css">
+
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body ng-app="pm.app.common" class="home ng-scope">
+        <header id="menu" navigation-scroll="" class="flip" style="margin-top: -8px;">
+            <div id="menu-background" style="top: 0px;"></div>
+            <div class="nav-wrapper">
+                <div role="navigation" class="container">
+                    <a href="/" alt="Placemeter Logo" class="brand"><span class="logo"></span></a>
+                    <button id="toggle" navigationexpand="" class="lines-button x visible-xs visible-sm"><span class="lines"></span></button>
+                    <nav class="primary-nav">
+                        <ul class="list-unstyled clearfix">
+                            <li><a href="" navigation-sub-nav="" class="title">Evento</a>
+                                <div class="submenu"><div class="submenu-wrapper">
+                                        <ul class="list-unstyled">
+                                            <li><a href="/platform" track-link="Submenu clicked: Platform">Platform</a></li>
+                                            <li><a href="/sensor" track-link="Submenu clicked: Sensor">Sensor</a></li>
+                                            <li><a href="/pricing" track-link="Submenu clicked: Pricing">Pricing</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="" navigation-sub-nav="" class="title">Programação</a>
+                                <div class="submenu">
+                                    <div class="submenu-wrapper">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="/solutions/retail" track-link="Submenu clicked: Retail &amp; CRE">Retail &amp; CRE</a>
+                                            </li>
+                                            <li>
+                                                <a href="/solutions/urban-design" track-link="Submenu clicked: Urban Design">Urban Design &amp; Architecture</a>
+                                            </li>
+                                            <li>
+                                                <a href="/solutions/government" track-link="Submenu clicked: Local Government">Local Government</a>
+                                            </li>
+                                            <li>
+                                                <a href="/solutions/civic-activism" track-link="Submenu clicked: Research &amp; Activism">Research &amp; Activism</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="secondary-nav">
+                        <!--a href="https://portal.placemeter.com/portal/login"
+                            class="sign-in">Sign In</a-->
+                        <a href="https://portal.placemeter.com/portal/account/register?ref=www-demo-cta"
+                           track-link="&quot;Try Now&quot; CTA clicked" track-link-placement="Site header" class="demo btn
+                           btn-primary">Entrar</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div>
+            {% block body_block %}{% endblock %}
+        </div>
+
+        <footer class="site-footer" style="margin-bottom: 1px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="secondary-nav nav-footer list-unstyled clearfix">
+                            <li><a href="http://www.placemeter.com/about">About</a></li>
+                            <li><a href="http://blog.placemeter.com/">Blog</a></li>
+                            <li><a href="http://www.placemeter.com/jobs">Careers</a></li>
+                            <li class="contact"><a href="http://www.placemeter.com/contact">Contact</a></li>
+                            <li><a href="http://www.placemeter.com/faq">FAQ</a></li>
+                            <li><a href="http://www.placemeter.com/privacy">Privacy</a></li>
+                            <li class="legal"><a href="http://www.placemeter.com/legal">Legal</a></li>
+                            <li><a href="http://press.placemeter.com/">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 hidden-xs hidden-sm"><h6>Product</h6>
+                        <ul class="nav-footer list-unstyled">
+                            <li><a href="http://www.placemeter.com/platform">Platform</a></li>
+                            <li><a href="http://www.placemeter.com/sensor">Sensor</a></li>
+                            <li><a href="http://www.placemeter.com/pricing">Pricing</a></li>
+                        </ul></div><div class="col-md-3 hidden-xs hidden-sm"><h6>Solutions</h6>
+                            <ul class="nav-footer list-unstyled">
+                                <li><a href="http://www.placemeter.com/solutions/retail">Retail &amp; CRE</a></li>
+                                <li><a href="http://www.placemeter.com/solutions/urban-design">Urban Design &amp; Architecture</a></li>
+                                <li><a href="http://www.placemeter.com/solutions/government">Local Government</a></li>
+                                <li><a href="http://www.placemeter.com/solutions/civic-activism">Research &amp; Activism</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5 col-md-3 col-md-offset-1">
+                            <ul class="social list-inline">
+                                    <li class="twitter"><a href="https://twitter.com/placemeter" title="Twitter">
+                                            <img src="Placemeter%20%7C%20Quantify%20the%20World_files/twitter.svg"></a></li>
+                                    <li class="facebook"><a href="https://www.facebook.com/Placemeter" title="Facebook">
+                                            <img src="Placemeter%20%7C%20Quantify%20the%20World_files/facebook.svg"></a></li>
+                                    <li class="linkedin"><a href="https://www.linkedin.com/company/placemeter" title="LinkedIn">
+                                            <img src="Placemeter%20%7C%20Quantify%20the%20World_files/linkedin.svg"></a></li>
+                                    <li class="instagram"><a href="https://instagram.com/placemeter/" title="Instagram">
+                                            <img src="Placemeter%20%7C%20Quantify%20the%20World_files/instagram.svg"></a></li>
+                            </ul><a href="https://mixpanel.com/f/partner" target="_blank" class="mixpanel">
+                                <img src="Placemeter%20%7C%20Quantify%20the%20World_files/badge_light2x.png" alt="Mobile Analytics"></a>
+                        </div>
+                </div>
+                <div class="credits">
+                    <div class="made-in-ny">Made in New York</div>
+                    <cite>© Placemeter Inc. 2015</cite>
+                </div>
+            </div></footer>
+    </body>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>
