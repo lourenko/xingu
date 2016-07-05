@@ -3,25 +3,85 @@
 {% load staticfiles %}
 
 {% block title %} Sobre {% endblock %}
+
 {% block body_block %}
 
 {{ state }}
 
   {% if next %}
     <form action="/mysite/about/?next={{next}}" method="post" >
-  {%else%}
+  {% else %}
     <form action="/mysite/about/" method="post" >
   {% endif %}
 
-    <!-- Begin page content -->
-    <div class="container">
-        <div class="page-header">
-            <!--h1>Sobre o IX Sipem</h1-->
-        </div>
-        <p class="lead">
-        O Simpósio Paranaense de Engenharia Mecânica é um evento ...
-        </p>
-    </div>
+   <ul class="nav nav-pills nav-stacked nav-tree" id="myTree" data-toggle="nav-tree">
+     <li>
+         <a href="http://www.example.com" target="_blank">Item One (With Children) (has link)</a>
+         <ul class="nav nav-pills nav-stacked nav-tree">
+             <li>
+                 <a href="#">Item A (Without Children)</a>
+             </li>
+             <li>
+                 <a href="#">Item B (Without Children)</a>
+             </li>
+             <li>
+                 <a href="#">Item C (Without Children)</a>
+             </li>
+         </ul>
+     </li>
+     <li>
+         <a href="#">Item Two (Without Children)</a>
+     </li>
+     <li>
+         <a href="#">Item Three (With Children and Grandchildren)</a>
+         <ul class="nav nav-pills nav-stacked nav-tree">
+             <li>
+                 <a href="#">Item A (With Children)</a>
+                 <ul class="nav nav-pills nav-stacked nav-tree">
+                     <li>
+                         <a href="#">Item I (Without Children)</a>
+                     </li>
+                     <li>
+                         <a href="#">Item II (Without Children)</a>
+                     </li>
+                     <li class="active">
+                         <a href="#">Item III (Without Children)</a>
+                     </li>
+                 </ul>
+             </li>
+             <li>
+                 <a href="#">Item B (Without Children)</a>
+             </li>
+             <li>
+                 <a href="#">Item C (With Children)</a>
+                 <ul class="nav nav-pills nav-stacked nav-tree">
+                     <li>
+                         <a href="#">Item I (Without Children)</a>
+                     </li>
+                     <li>
+                         <a href="#">Item II (Without Children)</a>
+                     </li>
+                     <li>
+                         <a href="#">Item III (Without Children)</a>
+                     </li>
+                 </ul>
+             </li>
+         </ul>
+     </li>
+ </ul>
+
+  <!-- Begin page content -->
+  <div class="container">
+      <div class="page-header">
+          <!--h1>Sobre o IX Sipem</h1-->
+      </div>
+      <p class="lead">
+       The main contributor of this site is Marcos Lourenço, professor at the
+       Academic Department of Mechanical Engineering, (DAMEC), UTFPr-Cornélio
+       Procópio, which focuses on numerical techniques for parallel fluid
+       dynamics simulations. Additional information can be found in this <a href="http://paginapessoal.utfpr.edu.br/mlourenco">link</a>.
+      </p>
+  </div>
 
 {% endblock %}
 

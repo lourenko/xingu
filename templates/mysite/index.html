@@ -15,10 +15,9 @@
     </ol-->
     <div class="clearfix"></div>
   </div>
-  <p class="lead">This is my personal homepage. Here, I share some projects,
-  thoughts and ideas. This site also contains lectures and other
-  materials for the courses I teach.</p>
-
+  <p class="lead">This is a personal homepage. Here, there are some shared projects,
+  thoughts and ideas. This site also contains material and others stuffs for a
+  few lectures in fluid mechanics, thermal sciences, and energy areas.</p>
   <table class="table forum table-striped">
     <thead>
       <tr>
@@ -34,9 +33,9 @@
       <tr>
         <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
         <td>
-          <h4><a href="mysite/blog/{{ post.id }}">{{ post.title }}</a><br>{{ post.descr }}</h4>
+          <h4><a href="blog/{{ post.id }}">{{ post.title }}</a><br>{{ post.descr }}</h4>
         </td>
-        <td class="hidden-xs hidden-sm"><i class="fa fa-clock-o">{{ post.date|date:"m-d-Y" }}</i></td>
+        <td class="hidden-xs hidden-sm"><i class="fa fa-clock-o">{{ post.date|date:"d-m-Y" }}</i></td>
       </tr>
     {% endfor %}
     </tbody>

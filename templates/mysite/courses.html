@@ -12,38 +12,38 @@
 {% block body_block %}
 
 <div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span3">
-            <div class="well sidebar-nav">
-                <ul class="nav nav-list">
-                    <li class="nav-header">Matérias</li>
-                    {% for course in courses %}
-                    <li class="active"><a href="/mysite/courses/page{{ forloop.counter }}">{{ course.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div><!--/.well -->
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Matérias</li>
+          {% for course in courses %}
+          <li class="active"><a href="/mysite/courses/page{{ forloop.counter }}">{{ course.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class="span9">
+      <div class="hero-unit">
+        <h1>{{ current.name }}</h1>
+        <p>{{ current.body|safe|linebreaks }}</p>
+        <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p>
+      </div>
+      {% for lesson in lessons %}
+      {% if lesson.id|divisibleby:"3" %}
+      <div class="row-fluid">
+        {% endif %}
+        <div class="span4">
+          <h3>{{lesson.id}}. {{lesson.title}}</h3>
+          <p>{{lesson.descr|safe}}</p>
+          <p><a class="btn btn-tiny" href="#">Ver aula »</a></p>
         </div><!--/span-->
-        <div class="span9">
-            <div class="hero-unit">
-                <h1>{{ current.name }}</h1>
-                <p>{{ current.body|safe|linebreaks }}</p>
-                <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p>
-            </div>
-            {% for lesson in lessons %}
-              {% if lesson.id|divisibleby:"3" %}
-                <div class="row-fluid">
-              {% endif %}
-                    <div class="span4">
-                        <h2> Aula {{ lesson.id }}</h2>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                        <p><a class="btn btn-tiny" href="#">Ver aula »</a></p>
-                    </div><!--/span-->
-              {% if lesson.id|divisibleby:"4" %}
-                </div><!--/row-->
-              {% endif %}
-            {% endfor %}
-        </div><!--/span-->
-    </div><!--/row-->
+        {% if lesson.id|divisibleby:"4" %}
+      </div><!--/row-->
+      {% endif %}
+      {% endfor %}
+    </div><!--/span-->
+  </div><!--/row-->
 </div>
 
 {% endblock %}

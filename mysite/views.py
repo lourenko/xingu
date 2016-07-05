@@ -11,6 +11,32 @@ from mysite.models import Post
 from mysite.models import Course, Lesson
 
 
+from django.views.generic import ListView, DetailView
+
+class PostDetailView(DetailView):
+    model = Post
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['post_name'] = self.object.title
+        return context
+
+    def get_template_names(self, **kwargs):
+        name = super(PostDetailView, self).get_template_names(**kwargs)
+        name = "mysite/post.html"
+        return name
+
+class CourseDetailView(DetailView):
+    model = Post
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['post_name'] = self.object.title
+        return context
+
+    def get_template_names(self, **kwargs):
+        name = super(PostDetailView, self).get_template_names(**kwargs)
+        name = "mysite/post.html"
+        return name
+
 def index(request):
     "Minha página inicial"
 
@@ -25,7 +51,7 @@ def about(request):
     if request.GET:
         next = request.GET['next']
 
-    contexto = {'test': "Apenas um teste!", 'post_name':'About', 'next':next}
+    contexto = {'post_name':'About', 'next':next}
 
     return render(request, "mysite/about.html", contexto)
 
@@ -122,6 +148,5 @@ def user_logout(request):
 
     # Take the user back to the homepage.
     return HttpResponseRedirect('/mysite')
-
 
 
