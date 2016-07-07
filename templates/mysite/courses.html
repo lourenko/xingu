@@ -19,11 +19,11 @@
         <h4 style="color:#999999;"><strong>Matérias</strong></h4>
         <ul class="nav nav-list">
           {% for course in courses %}
-          <li class="nav-header"><a id="navmaeaddpad" href="/mysite/courses/page{{ forloop.counter }}">{{course.name}}</a>
+          <li class="nav-header"><a id="navmaeaddpad" href="/mysite/courses/course{{forloop.counter}}">{{course.name}}</a>
             {% if current.name == course.name %}
             <!--ul class="nav nav-list"-->
               {% for lesson in lessons %}
-                <li><a id="navaddpad" class={{lesson.state}} href="#">{{lesson.id}}. {{lesson.title}}</a></li>
+                <li><a id="navaddpad" href="/mysite/courses/course{{forloop.parentloop.counter}}/{{lesson.id}}">{{lesson.id}}. {{lesson.title}}</a></li>
               {% endfor %}
             <!--/ul-->
             {% endif %}
@@ -33,6 +33,12 @@
       </div><!--/.well -->
     </div><!--/span-->
     <div class="span9">
+      {% if lesson %}
+      <div class="hero-unit">
+        <h2>{{lesson.id}}. {{lesson.title}}</h2>
+        <p>{{lesson.body|safe|linebreaks}}</p>
+      </div>
+      {% else %}
       <div class="hero-unit">
         <h1>{{ current.name }}</h1>
         <p>{{ current.body|safe|linebreaks }}</p>
@@ -51,6 +57,7 @@
       </div><!--/row-->
       {% endif %}
       {% endfor %}
+      {% endif %}
     </div><!--/span-->
   </div><!--/row-->
 </div>

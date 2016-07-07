@@ -62,15 +62,16 @@ def post(request):
     return render(request, "mysite/post.html", contexto)
 
 @login_required
-def courses(request, mat):
+def courses(request, mat=1, aula=0):
     "Course pages"
 
     Courses = Course.objects.order_by('name')
     perms = request.user.get_group_permissions()
     groups = request.user.groups.all()
 
-    ok = False
     courses = []
+    aula = int(aula)
+    lesson = None
     if len(groups):
         for g in groups:
             perm = g.permissions.all()[0].codename
@@ -82,8 +83,9 @@ def courses(request, mat):
             course = courses[int(mat)-1]
 
             lessons = course.lesson_set.all()
+            if aula: lesson = lessons[aula-1]
             contexto = {'courses':courses, 'mat':mat, 'site_name':r'Sinóptico',
-                        'current':course, 'lessons':lessons}
+                        'current':course, 'lessons':lessons, 'lesson':lesson}
 
             return render(request, "mysite/courses.html", contexto)
 
