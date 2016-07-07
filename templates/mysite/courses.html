@@ -5,6 +5,7 @@
 {% block styleblock %}
 <link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
 <link rel="stylesheet" href="{% static "css/courses.css" %}">
+<!--link rel="stylesheet" href={#% static "css/tree-view.css" %#}-->
 {% endblock %}
 
 {% block title %} {{block_name}} {% endblock %}
@@ -15,10 +16,18 @@
   <div class="row-fluid">
     <div class="span3">
       <div class="well sidebar-nav">
+        <h4 style="color:#999999;"><strong>Matérias</strong></h4>
         <ul class="nav nav-list">
-          <li class="nav-header">Matérias</li>
           {% for course in courses %}
-          <li class="active"><a href="/mysite/courses/page{{ forloop.counter }}">{{ course.name }}</a></li>
+          <li class="nav-header"><a id="navmaeaddpad" href="/mysite/courses/page{{ forloop.counter }}">{{course.name}}</a>
+            {% if current.name == course.name %}
+            <!--ul class="nav nav-list"-->
+              {% for lesson in lessons %}
+                <li><a id="navaddpad" class={{lesson.state}} href="#">{{lesson.id}}. {{lesson.title}}</a></li>
+              {% endfor %}
+            <!--/ul-->
+            {% endif %}
+          </li>
           {% endfor %}
         </ul>
       </div><!--/.well -->
@@ -38,7 +47,7 @@
           <p>{{lesson.descr|safe}}</p>
           <p><a class="btn btn-tiny" href="#">Ver aula »</a></p>
         </div><!--/span-->
-        {% if lesson.id|divisibleby:"4" %}
+        {% if lesson.id|divisibleby:"3" %}
       </div><!--/row-->
       {% endif %}
       {% endfor %}

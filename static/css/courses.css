@@ -117,3 +117,28 @@ h1, h2, h3, h4, h5, h6 {
         padding-right: 5px;
     }
 }
+
+#navmaeaddpad:hover {
+    color: #23527c;
+    padding: 10px 25px;
+}
+
+#navmaeaddpad {
+    padding: 10px 25px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+#navaddpad {
+    padding: 10px 35px;
+}
+
+#navaddpad.active {
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 35px;
+    background: #777777;
+}

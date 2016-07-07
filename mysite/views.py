@@ -62,7 +62,7 @@ def post(request):
     return render(request, "mysite/post.html", contexto)
 
 @login_required
-def courses(request, num):
+def courses(request, mat):
     "Course pages"
 
     Courses = Course.objects.order_by('name')
@@ -79,11 +79,11 @@ def courses(request, num):
                     courses.append(c)
 
         try:
-            course = courses[int(num)-1]
+            course = courses[int(mat)-1]
 
             lessons = course.lesson_set.all()
-            contexto = {'courses':courses, 'num':num, 'site_name':r'Sinóptico',
-                        'current':course,  'lessons':lessons}
+            contexto = {'courses':courses, 'mat':mat, 'site_name':r'Sinóptico',
+                        'current':course, 'lessons':lessons}
 
             return render(request, "mysite/courses.html", contexto)
 
